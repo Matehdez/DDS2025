@@ -34,7 +34,7 @@ public class InscripcionTest {
     public void testInscripcionValidaCorrelitvasIndirectas(){
         unAlumno.agregarMateriaAprobada(ayed);
         unAlumno.agregarMateriaAprobada(pdp);
-        unaInscripcion.addMateriaACursar(disenio);
+        unaInscripcion.agregarMateriaACursar(disenio);
 
         assertTrue(unaInscripcion.aprobada());
     }
@@ -42,22 +42,22 @@ public class InscripcionTest {
     @Test
     public void testInscripcionValidaCorrelitvasDirectas(){
         unAlumno.agregarMateriaAprobada(ayed);
-        unaInscripcion.addMateriaACursar(pdp);
+        unaInscripcion.agregarMateriaACursar(pdp);
 
         assertTrue(unaInscripcion.aprobada());
     }
 
     @Test
     public void testInscripcionInvalidaCorrelativasDirectas(){
-        unaInscripcion.addMateriaACursar(pdp);
+        unaInscripcion.agregarMateriaACursar(pdp);
 
         assertFalse(unaInscripcion.aprobada());
     }
 
     @Test
-    public void testInscripcionValidaCorrelativasIndirectas(){
+    public void testInscripcionInvalidaCorrelativasIndirectas(){
         unAlumno.agregarMateriaAprobada(ayed);
-        unaInscripcion.addMateriaACursar(disenio);
+        unaInscripcion.agregarMateriaACursar(disenio);
 
         assertFalse(unaInscripcion.aprobada());
     }
@@ -65,7 +65,7 @@ public class InscripcionTest {
     @Test
     public void testInscripcionValidaSinCorrelativas(){
         unAlumno.agregarMateriaAprobada(IySoc);
-        unaInscripcion.addMateriaACursar(IySoc);
+        unaInscripcion.agregarMateriaACursar(IySoc);
 
         assertTrue(unaInscripcion.aprobada());
     }

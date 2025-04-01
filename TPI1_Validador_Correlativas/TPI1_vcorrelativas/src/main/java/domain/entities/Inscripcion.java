@@ -12,7 +12,7 @@ public class Inscripcion {
         this.alumno = alumno;
     }
 
-    public void addMateriaACursar(Materia materiaACursar) {
+    public void agregarMateriaACursar(Materia materiaACursar) {
         materiasAcursar.add(materiaACursar);
     }
 
