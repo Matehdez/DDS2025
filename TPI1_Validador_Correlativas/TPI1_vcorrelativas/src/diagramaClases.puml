@@ -1,0 +1,31 @@
+@startuml
+class Alumno {
+    - String nombre
+    - String apellido
+    - String legajo
+    + Set<Materia> materiasAprobadas
+    + Alumno(String nombre, String apellido, String legajo)
+    + void agregarMateriaAprobada(Materia materia)
+}
+
+class Inscripcion {
+    - Set<Materia> materiasAcursar
+    - Alumno alumno
+    + Inscripcion(Alumno alumno)
+    + void addMateriaACursar(Materia materiaACursar)
+    + boolean aprobada()
+    - boolean puedeCursar(Materia materia)
+}
+
+class Materia {
+    - String nombre
+    + Set<Materia> materiasCorrelativas
+    + Materia(String nombre)
+    + void agregarMateriaCorrelativa(Materia materia)
+}
+
+Alumno --> Materia : materiasAprobadas
+Inscripcion --> Alumno : alumno
+Inscripcion --> Materia : materiasAcursar
+Materia --> Materia : materiasCorrelativas
+@enduml
