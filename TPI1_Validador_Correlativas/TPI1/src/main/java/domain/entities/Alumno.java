@@ -11,7 +11,7 @@ public class Alumno {
 
     private final String legajo;
 
-    Set<Materia> materiasAprobadas;
+    @Getter public Set<Materia> materiasAprobadas;
 
     public Alumno(String nombre, String apellido, String legajo) {
         this.nombre = nombre;

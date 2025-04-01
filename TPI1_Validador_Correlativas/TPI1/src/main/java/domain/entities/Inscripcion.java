@@ -23,4 +23,4 @@ public class Inscripcion {
     public boolean aprobada(){
         return materiasAcursar.stream().allMatch(this::puedeCursar);
     }
-} ///aaaaa
+}
